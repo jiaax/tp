@@ -340,60 +340,60 @@ to remove the calorie at the specific index in the corresponding list of Calorie
 
 ![RemoveCalorieSequenceDiagram](images/RemoveCalorieSequenceDiagram.png)
 
-### Updated BMI
+### Feature: Updated BMI
 
-  #### Implementations
+#### Implementations
 
-  ![BMI](images/calorieImages/BMI.png)
+![BMI](images/calorieImages/BMI.png)
 
-  This feature allows users to see their most updated BMI at their profile card
+This feature allows users to see their most updated BMI at their profile card
 
-  The mechanism requires a method in the person class "getCurrentBmi()". The chunk of code is shown in the diagram below.
- ![getCurrentBmi()](images/calorieImages/getCurrentBmi().png)
+The mechanism requires a method in the person class "getCurrentBmi()". The chunk of code is shown in the diagram below.
+![getCurrentBmi()](images/calorieImages/getCurrentBmi().png)
 
-  The method will take the latest weight record to calculate the most updated Bmi to be displayed. If there are no days being
- added into the class, the method will take the starting weight of the person to calculate the latest Bmi. The person card
- will detect any changes to the most current weight of the person and update the person card respectively.
+The method will take the latest weight record to calculate the most updated Bmi to be displayed. If there are no days being
+added into the class, the method will take the starting weight of the person to calculate the latest Bmi. The person card
+will detect any changes to the most current weight of the person and update the person card respectively.
 
-  The method invoke the static calculateBmi method from the Bmi class in the calculator package with the most current weight
- and height as the parameter. The bmi calculator will use the following formula (m/h^2) to calculate the bmi.
+The method invoke the static calculateBmi method from the Bmi class in the calculator package with the most current weight
+and height as the parameter. The bmi calculator will use the following formula (m/h^2) to calculate the bmi.
 
-  ### Progress Bar
+### Feature: Progress Bar
 
-  #### Implementations
+#### Implementations
 
-  ![progress_bar](images/calorieImages/progress_bar.png)
+![progress_bar](images/calorieImages/progress_bar.png)
 
-  This feature allows users to see their progress towards the healthy bmi range of 23.
+This feature allows users to see their progress towards the healthy bmi range of 23.
 
-  The mechanism requires a method in the person class "getProgress()". The chunk of code is shown in the diagram below.
- ![getProgress()](images/calorieImages/getProgress().png)
+The mechanism requires a method in the person class "getProgress()". The chunk of code is shown in the diagram below.
+![getProgress()](images/calorieImages/getProgress().png)
 
-  The method will take the starting bmi and the healthy bmi range of 23 as a bench mark. The method will take the weight
- entry of each day and get the user's bmi for the particular day. It will than use it too measure how close or far is it away
- from the healthy bmi of 23 and and returns the percentage. The profile card contains a fxml progress bar which will than take
- the percentage to update the progress bar respectively. If the bmi is lower than 23, the progress will be 1 and any bmi larger
- than the starting bmi will be 0.
+The method will take the starting bmi and the healthy bmi range of 23 as a bench mark. The method will take the weight
+entry of each day and get the user's bmi for the particular day. It will than use it too measure how close or far is it away
+from the healthy bmi of 23 and and returns the percentage. The profile card contains a fxml progress bar which will than take
+the percentage to update the progress bar respectively. If the bmi is lower than 23, the progress will be 1 and any bmi larger
+than the starting bmi will be 0.
 
-  ### Calorie Budget
+### Feature: Calorie Budget
 
-  #### Implementations
+#### Implementations
 
-  ![progress_bar](images/calorieImages/calorie_budget.png)
+![progress_bar](images/calorieImages/calorie_budget.png)
 
-  This feature allows users to see how much calorie they can afford to consume while still ensuring that they are losing
- weight for that day.
+This feature allows users to see how much calorie they can afford to consume while still ensuring that they are losing
+weight for that day.
 
-  The mechanism requires a method "calculateCalorieSurplus". The chunk of code is shown in the diagram below.
- ![getProgress()](images/calorieImages/CalorieBudget.png)
+The mechanism requires a method "calculateCalorieSurplus". The chunk of code is shown in the diagram below.
+![getProgress()](images/calorieImages/CalorieBudget.png)
 
-  The day card will call this static method from the CalorieBudget class in the calculator package. They day card will pass in 
- the total calorie input and total calorie output of the user for that particular day and the age of the user. The method will
- first calculate the basal metabolic rate of the user using their weight, age and height for the day using the revised Harris-Benedict equation.
- Since age does not play a significant role in the calculation and most of the recruits will be around 20, we assumed all users
- age to be 20. the basal metabolic rate determines how much calorie the user will burn naturally. To get the total calorie budget,
- the following formula is used. (totalCalorieOut + adjustedBasal - totalCalorieIn) This value will than be displayed to the user
- in the various day card.
+The day card will call this static method from the CalorieBudget class in the calculator package. They day card will pass in 
+the total calorie input and total calorie output of the user for that particular day and the age of the user. The method will
+first calculate the basal metabolic rate of the user using their weight, age and height for the day using the revised Harris-Benedict equation.
+Since age does not play a significant role in the calculation and most of the recruits will be around 20, we assumed all users
+age to be 20. the basal metabolic rate determines how much calorie the user will burn naturally. To get the total calorie budget,
+the following formula is used. (totalCalorieOut + adjustedBasal - totalCalorieIn) This value will than be displayed to the user
+in the various day card.
 
 ### Feature: View Daily Weight and Calorie Statistics
 
